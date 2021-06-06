@@ -1,1 +1,8 @@
-<h1>RSS</h1>
+<h1>野球まとめのまとめ</h1>
+<div class="box">
+  <% @feeds.each do |feed| %>
+    <p>
+      <%= link_to feed["title"], feed["link"] %>
+    </p>
+  <% end %>
+</div>
