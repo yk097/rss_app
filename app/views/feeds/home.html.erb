@@ -1,11 +1,13 @@
+<header></header>
 <h1>野球まとめのまとめ</h1>
+
 
 <div class="wrapper">
   <div class="box">
     <p class="site_title"><%= @rss1["channel"]["title"] %></p>
     <div>
       <% @rss1["item"].each do |feed| %>
-        <p><%= link_to feed["title"], feed["link"] %></p>
+        <li><%= link_to feed["title"], feed["link"] %></li>
       <% end %>
     </div>
   </div>
@@ -13,7 +15,7 @@
     <p class="site_title"><%= @rss2["channel"]["title"] %></p>
     <div>
       <% @rss2["item"].each do |feed| %>
-        <p><%= link_to feed["title"], feed["link"] %></p>
+        <li><%= link_to feed["title"], feed["link"] %></li>
       <% end %>
     </div>
   </div>
@@ -21,7 +23,7 @@
     <p class="site_title"><%= @rss3["channel"]["title"] %></p>
     <div>
       <% @rss3["item"].each do |feed| %>
-        <p><%= link_to feed["title"], feed["link"] %></p>
+        <li><%= link_to feed["title"], feed["link"] %></li>
       <% end %>
     </div>
   </div>
