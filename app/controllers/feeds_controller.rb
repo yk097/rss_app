@@ -1,11 +1,16 @@
 class FeedsController < ApplicationController
   
   def home
-    connection = Faraday.new("http://kokoyakyumatomesokuho.blog.jp") do |builder|
+    @rss1 = get_xml_response("http://kokoyakyumatomesokuho.blog.jp", "/index.rdf").body["RDF"]
+    @rss2 = get_xml_response("http://yakyu-matomeantena.blog.jp", "/index.rdf").body["RDF"]
+  end
+
+  
+  def get_xml_response(url, path)
+    connection = Faraday.new(url) do |builder|
       builder.response :xml, :content_type => /\bxml$/
     end
-    response = connection.get("/index.rdf")
-    @feeds = response.body["RDF"]["item"]
+    connection.get(path)
   end
-  
+
 end

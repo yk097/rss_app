@@ -1,8 +1,18 @@
 <h1>野球まとめのまとめ</h1>
+
 <div class="box">
-  <% @feeds.each do |feed| %>
-    <p>
-      <%= link_to feed["title"], feed["link"] %>
-    </p>
-  <% end %>
+  <p><%= @rss1["channel"]["title"] %></p>
+  <div>
+    <% @rss1["item"].each do |feed| %>
+      <p><%= link_to feed["title"], feed["link"] %></p>
+    <% end %>
+  </div>
+</div>
+<div class="box">
+  <p><%= @rss2["channel"]["title"] %></p>
+  <div>
+    <% @rss2["item"].each do |feed| %>
+      <p><%= link_to feed["title"], feed["link"] %></p>
+    <% end %>
+  </div>
 </div>
