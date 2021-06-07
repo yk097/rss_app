@@ -3,6 +3,7 @@ class FeedsController < ApplicationController
   def home
     @rss1 = get_xml_response("http://kokoyakyumatomesokuho.blog.jp", "/index.rdf").body["RDF"]
     @rss2 = get_xml_response("http://yakyu-matomeantena.blog.jp", "/index.rdf").body["RDF"]
+    @rss3 = get_xml_response("http://blog.livedoor.jp", "/nanjstu/index.rdf").body["RDF"]
   end
 
   
