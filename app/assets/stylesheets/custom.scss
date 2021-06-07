@@ -3,19 +3,23 @@ h1 {
   font-weight: bold;
 }
 
-.box {
-  width: 33%;
-  font-size: 0.7em;
-  border: 0.5px solid black;
-  padding: 3px;
-  margin: 3px;
-  background-color: blanchedalmond;
+.container {
+  display: flex;
+  flex-direction: row;
+  justify-content: space-around;
+}
+
+
+.col-md-4 {
+  font-size: 0.8em;
+  border: 0.5px solid white;
+  background-color: beige;
   .site_title {
     font-weight: bold;
     font-size: 1.2em;
   }
   li {
-    padding-bottom: 2px;
+    padding: 1px 0 1px 0;
     list-style: none;
     white-space: nowrap;
     overflow: hidden;
@@ -24,9 +28,4 @@ h1 {
 }
 
 
-.wrapper {
-  padding: 5px;
-  display: flex;
-  flex-direction: row;
-  justify-content: space-around;
-}
+
