@@ -1,0 +1,100 @@
+<header class="container">
+  <div class="log_box">
+    野球のまとめまとめ
+  </div>
+</header>
+
+<div class="container">
+  <div class="row">
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss1["channel"]["title"] %></p>
+        <ul>
+          <% @rss1["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss2["channel"]["title"] %></p>
+        <ul>
+          <% @rss2["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss3["channel"]["title"] %></p>
+        <ul>
+          <% @rss3["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss4["channel"]["title"] %></p>
+        <ul>
+          <% @rss4["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss5["channel"]["title"] %></p>
+        <ul>
+          <% @rss5["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss6["channel"]["title"] %></p>
+        <ul>
+          <% @rss6["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss7["channel"]["title"] %></p>
+        <ul>
+          <% @rss7["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss8["channel"]["title"] %></p>
+        <ul>
+          <% @rss8["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+    <div class="col-md-4 feed_container">
+      <div class="feed_box">
+        <p class="site_name"><%= @rss9["channel"]["title"] %></p>
+        <ul>
+          <% @rss9["item"].first(10).each do |feed| %>
+            <li><%= link_to feed["title"], feed["link"] ,target: :_blank, rel: "noopener noreferrer"%></li>
+          <% end %>
+        </ul>
+      </div>
+    </div>
+  </div>  
+</div>
