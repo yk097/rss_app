@@ -6,23 +6,25 @@ class Scrape < ApplicationRecord
       builder.response :xml, :content_type => /\bxml$/
     end
     response = connection.get(path).body
-    unless Channel.find_by(url: url)
+    #チャンネルの登録
+    if Channel.find_by(url: url)
+      #既存のチャンネルなら代入
+      channel = Channel.find_by(url: url)
+    else
       #新規のチャンネルならDBに登録
       channel = Channel.new
       channel.title = response["RDF"]["channel"]["title"]
       channel.url = url
       channel.save
-    else
-      #既存のチャンネルなら代入
-      channel = Channel.find_by(url: url)
     end
-    #itemをDBに登録
+    #itemの登録
     feeds = response["RDF"]["item"]
     feeds.each do |feed|
       item = Item.new
       item.title = feed["title"]
       item.url = feed["link"]
-      #item.channel_id = channel.id
+      item.channel_id = channel.id
+      #urlにunique制約を設けているのですでに入っているものは保存されないはず
       item.save
     end
   end
