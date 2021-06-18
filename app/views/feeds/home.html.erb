@@ -1,22 +1,24 @@
 <header class="container">
   <div class="headerbox">
-    <div class="logo">
-      <%= link_to "baseba11まとめ", "/" %>
-    </div>
+    <h2 class="logo">
+      <%= link_to "野球まとめのまとめ", "/" %>
+    </h2>
   </div>
 </header>
 
 <div class="container">
   <div class="feedcontainer">
-    <% @rssfeeds.each do |rssfeed| %>
+    <% @channels.each do |channel| %>
       <div class="contentsbox">
         <div class="sitename">
-          <%= link_to rssfeed["channel"]["title"], "#" %>
+          <%= link_to channel.title, channel.url %>
         </div>
         <div class="rssitems">
           <ul>
-            <% rssfeed["item"].first(5).each do |feed| %>
-              <li><%= link_to feed["title"], feed["link"], target: :_blank, rel: "noopener noreferrer" %>
+            <% channel.items.first(5).each do |item| %>
+              <li>
+                <%= link_to item.title, item.url, target: :_blank, rel: "noopener noreferrer" %>
+              </li>
             <% end %>
           </ul>
         </div>

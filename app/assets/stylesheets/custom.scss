@@ -11,12 +11,21 @@ body {
 }
 
 .headerbox {
-  background-color: white;
+  background-color: #EBF4F4;
   height: 100px;
   display: flex;
-  .logo {
-    justify-content: center;
-    align-items: center;
+  h2 {
+    padding-left: 15px;
+    display: table;
+    height: 100%;
+    a {
+      color: black;
+      font-family: Meiryo UI;
+      font-weight: bold;
+      text-decoration: none;
+      display: table-cell;
+      vertical-align:middle;
+    }
   }
 }
 
@@ -32,7 +41,7 @@ body {
     margin: 7px 0 7px 0;
     padding: 10px;
     border:  gray 1px solid;
-    background-color: #fffff9;
+    background-color: #EBF4F4;
     width: 31%;
     display: flex;
     align-items: center;
