@@ -3,32 +3,39 @@ body {
   /*  https://base64.work/so/css/2592536  */
   /* 背景画像の設定 */
   /* https://qiita.com/Kiyo_Karl2/items/bd6d2f9f9c6b1e3f0a2e */
-  background-image: image_url('baseball.jpg')!important;
+  background-image: image_url('4347042_m-min.jpg')!important;
   background-repeat: no-repeat;
+/*   background-color: #BBBF49!important; */
 /* https://coliss.com/articles/build-websites/operation/css/css-responsive-full-background-image-by-sixrevisions.html */
   background-position: center center;
   background-size: cover; 
 }
 
 .headerbox {
-  background-color: #EBF4F4;
+  background-color: #f5f5dc;
   height: 100px;
   display: flex;
-  h2 {
-    padding-left: 15px;
-    display: table;
-    height: 100%;
-    a {
-      color: black;
-      font-family: Meiryo UI;
-      font-weight: bold;
-      text-decoration: none;
-      display: table-cell;
-      vertical-align:middle;
-    }
+  justify-content: space-between;
+  .logo-image {
+    width: 60%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+  }
+  .left-image {
+    width: 20%;
+    display: flex;
+    justify-content: center;
+    text-align: left;
+  }
+  .right-image {
+    width: 20%;
+    text-align: right;
+    display: flex;
+    justify-content: center;
+    text-align: left;
   }
 }
-
 
 .feedcontainer {
   backdrop-filter: blur(5px);
@@ -40,15 +47,21 @@ body {
   .contentsbox {
     margin: 7px 0 7px 0;
     padding: 10px;
-    border:  gray 1px solid;
-    background-color: #EBF4F4;
+    border:  #C0C0C0 1px solid;
+    background-color: #f5f5dc;
+    /* background-color: #F2D4C2; */
     width: 31%;
     display: flex;
     align-items: center;
     flex-flow: column;
     .sitename {
-      font-size: 1.2em;
+      font-size: 100%;
       margin-bottom: 5px;
+      a {
+        color: black;
+        font-weight: bold;
+        text-decoration: none;
+      }
     }
     ul {
       padding-left: 0;
@@ -58,7 +71,7 @@ body {
         margin-bottom: 5px;
         line-height: 1.8;
         height: 3.6em;
-        border: gray 1px solid;
+        border: #C0C0C0 1px solid;
         list-style: none;
         overflow: hidden;
         text-overflow: ellipsis;
