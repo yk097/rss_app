@@ -17,6 +17,29 @@
   </head>
 
   <body>
+    <header class="container">
+      <div class="headerbox">
+        <div class="left-image">
+          <%= image_tag 'pitcher.png' %>
+        </div>
+        <div class="logo-image">
+          <%= link_to image_tag('logo-large.png'), "/" %>
+        </div>
+        <div class="right-image">
+          <%= image_tag 'batter.png' %>
+        </div>
+      </div>
+    </header>
+    <%#
+      <div class="container">
+        <div class="searchbar">
+          <div class="search">
+            <p>test</p>
+          </div>
+        </div>
+      </div>
+    %>
+    
     <%= yield %>
     <!-- Optional JavaScript -->
     <!-- jQuery first, then Popper.js, then Bootstrap JS -->
