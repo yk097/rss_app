@@ -23,6 +23,7 @@ class Scrape < ApplicationRecord
       item = Item.new
       item.title = feed["title"]
       item.url = feed["link"]
+      item.datetime = feed["date"].to_time
       item.channel_id = channel.id
       #urlにunique制約を設けているのですでに入っているものは保存されないはず
       item.save
@@ -40,4 +41,17 @@ class Scrape < ApplicationRecord
     self.fetch_feed("http://kyuukaiou.ldblog.jp", "/index.rdf")
     self.fetch_feed("http://baseballdays.officialblog.jp", "/index.rdf")
   end
+
+  #100件を超えた場合、古いレコードから削除する
+  # def self.delete_old_item
+  #   channels = Channel.all
+  #   channels.each do |channel|
+  #     if channel.items.count > 100
+  #       channel.
+  #     end
+
+  #
+
+    
+
 end

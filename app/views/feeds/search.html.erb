@@ -1,0 +1,15 @@
+
+
+
+
+<div class="container">
+  <div class="searchitems">
+    <% @items.each do |item| %>
+      <div class="searchitem">
+        <p class="channel"><%= item.channel.title %></p>
+        <p class="title"><%= link_to item.title, item.url %></p>        
+      </div>
+    <% end %>
+  </div>
+</div>
+
