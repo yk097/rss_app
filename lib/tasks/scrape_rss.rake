@@ -4,6 +4,9 @@ namespace :scrape_rss do
     before = Item.count
     Scrape.fetch_feeds
     after = Item.count
-    puts "RSSを取得しました 更新#{after - before}件"
+    Scrape.destroy_old_item
+    delete = Item.count
+
+    puts "RSSを更新しました 取得#{after - before}件 削除#{after - delete}件"
   end
 end

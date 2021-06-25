@@ -30,6 +30,7 @@ class Scrape < ApplicationRecord
     end
   end
 
+  #rssフィードをまとめて取得
   def self.fetch_feeds
     self.fetch_feed("http://kokoyakyumatomesokuho.blog.jp", "/index.rdf")
     self.fetch_feed("http://yakyu-matomeantena.blog.jp", "/index.rdf")
@@ -43,15 +44,16 @@ class Scrape < ApplicationRecord
   end
 
   #100件を超えた場合、古いレコードから削除する
-  # def self.delete_old_item
-  #   channels = Channel.all
-  #   channels.each do |channel|
-  #     if channel.items.count > 100
-  #       channel.
-  #     end
-
-  #
-
-    
+  def self.destroy_old_item
+    channels = Channel.all
+    channels.each do |channel|
+      if channel.items.count > 100
+        overs = channel.items[100..]
+        overs.each do |over|
+          over.destroy
+        end
+      end
+    end
+  end
 
 end
