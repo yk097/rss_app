@@ -5,7 +5,7 @@ class FeedsController < ApplicationController
   end
 
   def search
-    @items = Channel.first.items
+    @items = Item.where("title LIKE ?", "%#{params[:title]}%")
   end
 
 
