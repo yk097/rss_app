@@ -5,7 +5,11 @@ class FeedsController < ApplicationController
   end
 
   def search
-    @items = Item.where("title LIKE ?", "%#{params[:title]}%")
+    if params[:title].empty?
+      redirect_to root_path
+    else
+      @items = Item.where("title LIKE ?", "%#{params[:title]}%")
+    end
   end
 
 

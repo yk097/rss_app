@@ -1,10 +1,9 @@
 <div class="container">
   <div class="results-box">
-    <% @items.first(10).each do |item| %>
-      <div class="result-box">
-        <h3><%= link_to item.title, item.url %></h3>
-        <p><%= item.channel.title %></p>
-      </div>
+    <% if @items.present? %>
+      <%= render 'layouts/presence' %>
+    <% else %>
+      <%= render 'layouts/absence' %>
     <% end %>
   </div>
 </div>

@@ -1,0 +1,6 @@
+<% @items.first(10).each do |item| %>
+  <div class="result-box">
+    <h3><%= link_to item.title, item.url %></h3>
+    <p><%= item.channel.title %></p>
+  </div>
+<% end %>
