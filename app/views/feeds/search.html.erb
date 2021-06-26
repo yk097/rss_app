@@ -1,15 +1,12 @@
-
-
-
-
 <div class="container">
-  <div class="searchitems">
-    <% @items.each do |item| %>
-      <div class="searchitem">
-        <p class="channel"><%= item.channel.title %></p>
-        <p class="title"><%= link_to item.title, item.url %></p>        
+  <div class="results-box">
+    <% @items.first(10).each do |item| %>
+      <div class="result-box">
+        <h3><%= link_to item.title, item.url %></h3>
+        <p><%= item.channel.title %></p>
       </div>
     <% end %>
   </div>
 </div>
+
 
