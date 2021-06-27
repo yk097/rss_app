@@ -1,6 +1,7 @@
+<p class="result-count"><%= "検索結果：#{@items.count}件" %></p>
 <% @items.first(10).each do |item| %>
   <div class="result-box">
-    <h3><%= link_to item.title, item.url %></h3>
-    <p><%= item.channel.title %></p>
+    <p class="result-item"><%= link_to item.title, item.url %></p>
+    <p class="result-channel"><%= item.channel.title %></p>
   </div>
 <% end %>

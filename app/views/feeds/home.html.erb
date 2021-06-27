@@ -7,7 +7,7 @@
         </div>
         <div class="rssitems">
           <ul>
-            <% channel.items.first(5).each do |item| %>
+            <% channel.items.first(3).each do |item| %>
               <li>
                 <%= link_to item.title, item.url, target: :_blank, rel: "noopener noreferrer" %>
               </li>

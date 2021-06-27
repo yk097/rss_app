@@ -34,10 +34,9 @@
         <div class="searchbar">
           <div class="search">
             <%= form_with url: search_path, method: :get, local: true do |form| %>
-              <%= form.text_field :title %>
+              <%= form.text_field :title, placeholder: "キーワードで検索" %>
               <%= form.submit "検索" %>
             <% end %>
-
           </div>
         </div>
       </div>
