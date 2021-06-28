@@ -8,7 +8,7 @@ class FeedsController < ApplicationController
     if params[:title].empty?
       redirect_to root_path
     else
-      @items = Item.where("title LIKE ?", "%#{params[:title]}%")
+      @feeds = Item.where("title LIKE ?", "%#{params[:title]}%").page(params[:page]).per(10)
     end
   end
 

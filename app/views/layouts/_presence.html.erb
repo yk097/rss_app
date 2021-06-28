@@ -1,7 +1,12 @@
-<p class="result-count"><%= "検索結果：#{@items.count}件" %></p>
-<% @items.first(10).each do |item| %>
+<div class="result-count">
+  <p><%= "検索結果：#{@feeds.count}件" %></p>
+  <%= paginate @feeds %>
+</div>
+<% @feeds.each do |feed| %>
   <div class="result-box">
-    <p class="result-item"><%= link_to item.title, item.url %></p>
-    <p class="result-channel"><%= item.channel.title %></p>
+    <p class="result-item"><%= link_to feed.title, feed.url %></p>
+    <p class="result-channel"><%= feed.channel.title %></p>
   </div>
 <% end %>
+<%= paginate @feeds %>
+
