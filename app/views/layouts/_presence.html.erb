@@ -1,11 +1,15 @@
 <div class="result-count">
-  <p><%= "検索結果：#{@feeds.count}件" %></p>
+  <p><%= "検索結果：#{@all.count}件" %></p>
   <%= paginate @feeds %>
 </div>
 <% @feeds.each do |feed| %>
   <div class="result-box">
-    <p class="result-item"><%= link_to feed.title, feed.url %></p>
-    <p class="result-channel"><%= feed.channel.title %></p>
+    <p class="result-item">
+      <%= link_to feed.title, feed.url, target: :_blank, rel: "noopener noreferrer" %>
+    </p>
+    <p class="result-channel">
+      <%= feed.channel.title %>
+    </p>
   </div>
 <% end %>
 <%= paginate @feeds %>
