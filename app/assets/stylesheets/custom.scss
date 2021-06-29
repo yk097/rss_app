@@ -123,6 +123,7 @@ body {
     border: 1px gray solid;
     border-radius: 5px;
     background-color: whitesmoke;
+    // background-color: whitesmoke;
     text-align: center;
     a {
       display: block;
@@ -138,10 +139,13 @@ body {
   border: 1px gray solid;
 }
 
+.result-count {
+  border-bottom: 1px gray solid;
+}
+
 .result-box {
   height: 60px;
   border-bottom: 1px gray solid;
-  border-top: 1px gray solid;
   padding: 3px;
   margin-bottom: 0;
   display: flex;
